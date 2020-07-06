@@ -3,7 +3,8 @@ from .models import Categories, Materials, Colors, Sizes, Products
 
 
 class CategoriesConfig(admin.ModelAdmin):
-    fields = ('name', 'icon')
+    fields = ('name', 'icon', 'slug_category')
+    prepopulated_fields = {'slug_category': ('name',)}
     list_display = fields
 
 
@@ -37,7 +38,7 @@ admin.site.register(Sizes, SizesConfig)
 class ProductsConfig(admin.ModelAdmin):
     fields = (
         'name',
-        'slug',
+        'slug_product',
         'brand',
         ('category', 'availability', 'new'),
         ('price', 'price_discount', 'discount'),
@@ -51,7 +52,7 @@ class ProductsConfig(admin.ModelAdmin):
         'img5'
     )
     list_display = ('name', 'category', 'price')
-    prepopulated_fields = {'slug': ('name',)}
+    prepopulated_fields = {'slug_product': ('name',)}
 
 
 admin.site.register(Products, ProductsConfig)

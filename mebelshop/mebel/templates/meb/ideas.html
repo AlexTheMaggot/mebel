@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,21 +14,30 @@
     <!-- Meta tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="{% static 'css/favicon.ico' %}">
 
     <!--Title-->
     <title>Blog category | Mobel - Furniture Website Template</title>
 
     <!--CSS styles-->
-    <link rel="stylesheet" media="all" href="css/bootstrap.css" />
-    <link rel="stylesheet" media="all" href="css/animate.css" />
-    <link rel="stylesheet" media="all" href="css/font-awesome.css" />
-    <link rel="stylesheet" media="all" href="css/furniture-icons.css" />
-    <link rel="stylesheet" media="all" href="css/linear-icons.css" />
-    <link rel="stylesheet" media="all" href="css/magnific-popup.css" />
-    <link rel="stylesheet" media="all" href="css/owl.carousel.css" />
-    <link rel="stylesheet" media="all" href="css/ion-range-slider.css" />
-    <link rel="stylesheet" media="all" href="css/theme.css" />
+    <link rel="stylesheet" media="all" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/font-awesome.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/furniture-icons.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/linear-icons.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/magnific-popup.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/owl.carousel.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/ion-range-slider.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'css/theme.css' %}" />
+
+    <!--JS files-->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'js/jquery.owl.carousel.js' %}"></script>
+    <script src="{% static 'js/jquery.ion.rangeSlider.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.pkgd.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&amp;subset=latin-ext" rel="stylesheet">
@@ -85,8 +95,6 @@
                             <ul class="nav-settings-list">
                                 <li>ENG</li>
                                 <li>GER</li>
-                                <li>لعربية</li>
-                                <li>עִבְרִית</li>
                             </ul>
                         </li>
                         <li><a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a></li>
@@ -101,7 +109,7 @@
 
                     <!-- Setup your logo here-->
 
-                    <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="" /></a>
+                    <a href="index.html" class="logo"><img src="{% static 'images/logo.png' %}" alt="" /></a>
 
                     <!-- Mobile toggle menu -->
 
@@ -118,437 +126,343 @@
                         </div>
 
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            
+                            <li><a href="{% url 'home' %}">Главная</a></li>
+
                             <!-- Multi-content dropdown -->
 
-                            <li>
-                                <a href="index.html">Pages <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <div class="navbar-dropdown">
-                                    <div class="navbar-box">
-
-                                        <!-- box-1 (left-side)-->
-
-                                        <div class="box-1">
-                                            <div class="box">
-                                                <div class="h2">Find your inspiration</div>
-                                                <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
-                                                    <a class="btn btn-clean btn-big" href="products-grid.html">Shop now</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- box-2 (right-side)-->
-
-                                        <div class="box-2">
-                                            <div class="box clearfix">
-                                                <div class="row">
-                                                    <div class="col-md-4">
-                                                        <ul>
-                                                            <li class="label">Homepage</li>
-                                                            <li><a href="index.html">Home - Slider</a></li>
-                                                            <li><a href="index-2.html">Home - Tabsy gallery</a></li>
-                                                            <li><a href="index-3.html">Home - Slider full screen</a></li>
-                                                            <li><a href="index-4.html">Home - Info icons</a></li>
-                                                            <li><a href="index-xmas.html">Home - Xmas</a></li>
-                                                            <li><a href="index-rtl.html">Home - RTL <span class="label label-warning">New</span></a></li>
-                                                            <li><a href="index-5.html">Onepage</a></li>
-                                                            <li><a href="index-6.html">Onepage - Filters <span class="label label-warning">Isotope</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <ul>
-                                                            <li class="label">Blog</li>
-                                                            <li><a href="blog-grid.html">Blog grid</a></li>
-                                                            <li><a href="blog-list.html">Blog list</a></li>
-                                                            <li><a href="blog-grid-fullpage.html">Blog fullpage</a></li>
-                                                            <li><a href="ideas.html">Blog ideas</a></li>
-                                                            <li><a href="article.html">Blog article</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <ul>
-                                                            <li class="label">Pages</li>
-                                                            <li><a href="about.html">About us</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="login.html">Login & Register <span class="label label-warning">New</span></a></li>
-                                                        </ul>
-                                                        <ul>
-                                                            <li class="label">Extras</li>
-                                                            <li><a href="shortcodes.html">Shortcodes</a></li>
-                                                            <li><a href="email-receipt.html">Email template <span class="label label-warning">New</span></a></li>
-                                                            <li><a href="404.html">Not found 404 <span class="label label-warning">New</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div> <!--/row-->
-                                            </div> <!--/box-->
-                                        </div> <!--/box-2-->
-                                    </div> <!--/navbar-box-->
-                                </div> <!--/navbar-dropdown-->
-                            </li>
+                            <li><a href="{% url 'shop' %}">Товары</a></li>
 
                             <!-- Single dropdown-->
-
-                            <li>
-                                <a href="#">Shop <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <div class="navbar-dropdown navbar-dropdown-single">
-                                    <div class="navbar-box">
-
-                                        <!-- box-2 (without 'box-1', box-2 will be displayed as full width)-->
-
-                                        <div class="box-2">
-                                            <div class="box clearfix">
-                                                <ul>
-                                                    <li class="label">Shop</li>
-                                                    <li><a href="products-grid.html">Products grid</a></li>
-                                                    <li><a href="products-list.html">Products list</a></li>
-                                                    <li><a href="category.html">Products intro</a></li>
-                                                    <li><a href="products-topbar.html">Products topbar</a></li>
-                                                    <li><a href="product.html">Product overview</a></li>
-                                                </ul>
-                                                <ul>
-                                                    <li class="label">Shop Isotope</li>
-                                                    <li><a href="products-grid-isotope.html">Products filters <span class="label label-warning">New</span></a></li>
-                                                    <li><a href="products-topbar-isotope.html">Products topbar <span class="label label-warning">New</span></a></li>
-                                                </ul>
-                                                <ul>
-                                                    <li class="label">Checkout</li>
-                                                    <li><a href="checkout-1.html">Checkout - Cart items</a></li>
-                                                    <li><a href="checkout-2.html">Checkout - Delivery</a></li>
-                                                    <li><a href="checkout-3.html">Checkout - Payment</a></li>
-                                                    <li><a href="checkout-4.html">Checkout - Receipt</a></li>
-                                                </ul>
-                                            </div> <!--/box-->
-                                        </div> <!--/box-2-->
-                                    </div> <!--/navbar-box-->
-                                </div> <!--/navbar-dropdown-->
-                            </li>
+                            <li><a href="{% url 'shop' %}">Портфолио</a></li>
+                            <li><a href="{% url 'design' %}">Дизайнер интерьера</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'contact' %}">Контакты</a></li>
 
                             <!-- Furniture icons in dropdown-->
 
-                            <li>
-                                <a href="category.html">Icons <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <div class="navbar-dropdown">
-                                    <div class="navbar-box">
+<!--                            <li>-->
+<!--                                <a href="category.html">Icons <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>-->
+<!--                                <div class="navbar-dropdown">-->
+<!--                                    <div class="navbar-box">-->
 
-                                        <!-- box-1 (left-side)-->
+<!--                                        &lt;!&ndash; box-1 (left-side)&ndash;&gt;-->
 
-                                        <div class="box-1">
-                                            <div class="image">
-                                                <img src="assets/images/blog-2.jpg" alt="Lorem ipsum" />
-                                            </div>
-                                            <div class="box">
-                                                <div class="h2">Best ideas</div>
-                                                <div class="clearfix">
-                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>
-                                                    <a class="btn btn-clean btn-big" href="ideas.html">Explore</a>
-                                                </div>
-                                            </div>
-                                        </div> <!--/box-1-->
+<!--                                        <div class="box-1">-->
+<!--                                            <div class="image">-->
+<!--                                                <img src="{% static 'images/blog-2.jpg' %}" alt="Lorem ipsum" />-->
+<!--                                            </div>-->
+<!--                                            <div class="box">-->
+<!--                                                <div class="h2">Best ideas</div>-->
+<!--                                                <div class="clearfix">-->
+<!--                                                    <p>Homes that differ in terms of style, concept and architectural solutions have been furnished by Furniture Factory. These spaces tell of an international lifestyle that expresses modernity, research and a creative spirit.</p>-->
+<!--                                                    <a class="btn btn-clean btn-big" href="ideas.html">Explore</a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div> -->
+                                        <!--/box-1-->
 
                                         <!-- box-2 (right-side)-->
 
-                                        <div class="box-2">
-                                            <div class="clearfix categories">
-                                                <div class="row">
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                        <div class="box-2">-->
+<!--                                            <div class="clearfix categories">-->
+<!--                                                <div class="row">-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-sofa"></i>
-                                                                <figcaption>Sofa</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-sofa"></i>-->
+<!--                                                                <figcaption>Sofa</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-armchair"></i>
-                                                                <figcaption>Armchairs</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-armchair"></i>-->
+<!--                                                                <figcaption>Armchairs</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-chair"></i>
-                                                                <figcaption>Chairs</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-chair"></i>-->
+<!--                                                                <figcaption>Chairs</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-dining-table"></i>
-                                                                <figcaption>Dining tables</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-dining-table"></i>-->
+<!--                                                                <figcaption>Dining tables</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-media-cabinet"></i>
-                                                                <figcaption>Media storage</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-media-cabinet"></i>-->
+<!--                                                                <figcaption>Media storage</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-table"></i>
-                                                                <figcaption>Tables</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-table"></i>-->
+<!--                                                                <figcaption>Tables</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-bookcase"></i>
-                                                                <figcaption>Bookcase</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-bookcase"></i>-->
+<!--                                                                <figcaption>Bookcase</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-bedroom"></i>
-                                                                <figcaption>Bedroom</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-bedroom"></i>-->
+<!--                                                                <figcaption>Bedroom</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-nightstand"></i>
-                                                                <figcaption>Nightstand</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-nightstand"></i>-->
+<!--                                                                <figcaption>Nightstand</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-children-room"></i>
-                                                                <figcaption>Children room</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-children-room"></i>-->
+<!--                                                                <figcaption>Children room</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-kitchen"></i>
-                                                                <figcaption>Kitchen</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-kitchen"></i>-->
+<!--                                                                <figcaption>Kitchen</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-bathroom"></i>
-                                                                <figcaption>Bathroom</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-bathroom"></i>-->
+<!--                                                                <figcaption>Bathroom</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-wardrobe"></i>
-                                                                <figcaption>Wardrobe</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-wardrobe"></i>-->
+<!--                                                                <figcaption>Wardrobe</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-shoe-cabinet"></i>
-                                                                <figcaption>Shoe cabinet</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-shoe-cabinet"></i>-->
+<!--                                                                <figcaption>Shoe cabinet</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-office"></i>
-                                                                <figcaption>Office</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-office"></i>-->
+<!--                                                                <figcaption>Office</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-bar-set"></i>
-                                                                <figcaption>Bar sets</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-bar-set"></i>-->
+<!--                                                                <figcaption>Bar sets</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-lightning"></i>
-                                                                <figcaption>Lightning</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                    
-                                                    <!--icon item-->                                                
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-lightning"></i>-->
+<!--                                                                <figcaption>Lightning</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                    -->
+<!--                                                    &lt;!&ndash;icon item&ndash;&gt;                                                -->
 
-                                                    <div class="col-sm-3 col-xs-6">
-                                                        <a href="javascript:void(0);">
-                                                            <figure>
-                                                                <i class="f-icon f-icon-carpet"></i>
-                                                                <figcaption>Carpet</figcaption>
-                                                            </figure>
-                                                        </a>
-                                                    </div>
-                                                </div> <!--/row-->
-                                            </div> <!--/categories-->
-                                        </div> <!--/box-2-->
-                                    </div> <!--/navbar-box-->
-                                </div> <!--/navbar-dropdown-->
-                            </li>
+<!--                                                    <div class="col-sm-3 col-xs-6">-->
+<!--                                                        <a href="javascript:void(0);">-->
+<!--                                                            <figure>-->
+<!--                                                                <i class="f-icon f-icon-carpet"></i>-->
+<!--                                                                <figcaption>Carpet</figcaption>-->
+<!--                                                            </figure>-->
+<!--                                                        </a>-->
+<!--                                                    </div>-->
+<!--                                                </div> &lt;!&ndash;/row&ndash;&gt;-->
+<!--                                            </div> &lt;!&ndash;/categories&ndash;&gt;-->
+<!--                                        </div> &lt;!&ndash;/box-2&ndash;&gt;-->
+<!--                                    </div> &lt;!&ndash;/navbar-box&ndash;&gt;-->
+<!--                                </div> &lt;!&ndash;/navbar-dropdown&ndash;&gt;-->
+<!--                            </li>-->
 
                             <!-- Mega menu dropdown -->
 
-                            <li>
-                                <a href="#">Megamenu <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>
-                                <div class="navbar-dropdown">
-                                    <div class="navbar-box">
-                                        <div class="box-2">
-                                            <div class="box clearfix">
-                                                <div class="row">
-                                                    <div class="clearfix">
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Seating</li>
-                                                                <li><a href="javascript:void(0);">Benches</a></li>
-                                                                <li><a href="javascript:void(0);">Submenu <span class="label label-warning">New</span></a></li>
-                                                                <li><a href="javascript:void(0);">Chaises</a></li>
-                                                                <li><a href="javascript:void(0);">Recliners</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Storage</li>
-                                                                <li><a href="javascript:void(0);">Bockcases</a></li>
-                                                                <li><a href="javascript:void(0);">Closets</a></li>
-                                                                <li><a href="javascript:void(0);">Wardrobes</a></li>
-                                                                <li><a href="javascript:void(0);">Dressers <span class="label label-success">Trending</span></a></li>
-                                                                <li><a href="javascript:void(0);">Sideboards </a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Tables</li>
-                                                                <li><a href="javascript:void(0);">Consoles</a></li>
-                                                                <li><a href="javascript:void(0);">Desks</a></li>
-                                                                <li><a href="javascript:void(0);">Dining tables</a></li>
-                                                                <li><a href="javascript:void(0);">Occasional tables</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Chairs</li>
-                                                                <li><a href="javascript:void(0);">Dining Chairs</a></li>
-                                                                <li><a href="javascript:void(0);">Office Chairs</a></li>
-                                                                <li><a href="javascript:void(0);">Lounge Chairs <span class="label label-warning">Offer</span></a></li>
-                                                                <li><a href="javascript:void(0);">Stools</a></li>
+<!--                            <li>-->
+<!--                                <a href="#">Megamenu <span class="open-dropdown"><i class="fa fa-angle-down"></i></span></a>-->
+<!--                                <div class="navbar-dropdown">-->
+<!--                                    <div class="navbar-box">-->
+<!--                                        <div class="box-2">-->
+<!--                                            <div class="box clearfix">-->
+<!--                                                <div class="row">-->
+<!--                                                    <div class="clearfix">-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Seating</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Benches</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Submenu <span class="label label-warning">New</span></a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Chaises</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Recliners</a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Storage</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Bockcases</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Closets</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Wardrobes</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Dressers <span class="label label-success">Trending</span></a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Sideboards </a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Tables</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Consoles</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Desks</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Dining tables</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Occasional tables</a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Chairs</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Dining Chairs</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Office Chairs</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Lounge Chairs <span class="label label-warning">Offer</span></a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Stools</a></li>-->
 
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="clearfix">
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Kitchen</li>
-                                                                <li><a href="javascript:void(0);">Kitchen types</a></li>
-                                                                <li><a href="javascript:void(0);">Kitchen elements <span class="label label-info">50%</span></a></li>
-                                                                <li><a href="javascript:void(0);">Bars</a></li>
-                                                                <li><a href="javascript:void(0);">Wall decoration</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Accessories</li>
-                                                                <li><a href="javascript:void(0);">Coat Racks</a></li>
-                                                                <li><a href="javascript:void(0);">Lazy bags <span class="label label-success">Info</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Beds</li>
-                                                                <li><a href="javascript:void(0);">Beds</a></li>
-                                                                <li><a href="javascript:void(0);">Sofabeds</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-md-3">
-                                                            <ul>
-                                                                <li class="label">Entertainment</li>
-                                                                <li><a href="javascript:void(0);">Wall units <span class="label label-warning">Popular</span></a></li>
-                                                                <li><a href="javascript:void(0);">Media sets</a></li>
-                                                                <li><a href="javascript:void(0);">Decoration</a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> <!--/box-->
-                                        </div> <!--/box-2-->
-                                    </div> <!--/navbar-box-->
-                                </div> <!--/navbar-dropdown-->
-                            </li>
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                    <div class="clearfix">-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Kitchen</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Kitchen types</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Kitchen elements <span class="label label-info">50%</span></a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Bars</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Wall decoration</a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Accessories</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Coat Racks</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Lazy bags <span class="label label-success">Info</span></a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Beds</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Beds</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Sofabeds</a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="col-md-3">-->
+<!--                                                            <ul>-->
+<!--                                                                <li class="label">Entertainment</li>-->
+<!--                                                                <li><a href="javascript:void(0);">Wall units <span class="label label-warning">Popular</span></a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Media sets</a></li>-->
+<!--                                                                <li><a href="javascript:void(0);">Decoration</a></li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div> &lt;!&ndash;/box&ndash;&gt;-->
+<!--                                        </div> &lt;!&ndash;/box-2&ndash;&gt;-->
+<!--                                    </div> &lt;!&ndash;/navbar-box&ndash;&gt;-->
+<!--                                </div> &lt;!&ndash;/navbar-dropdown&ndash;&gt;-->
+<!--                            </li>-->
 
                             <!-- Simple menu link-->
 
-                            <li><a href="shortcodes.html">Shortcodes</a></li>
+<!--                            <li><a href="shortcodes.html">Shortcodes</a></li>-->
                         </ul>
                     </div> <!--/floating-menu-->
                 </div> <!--/navigation-main-->
@@ -618,7 +532,7 @@
 
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
-                                        <a href="product.html"><img src="assets/images/product-1.png" alt="" /></a>
+                                        <a href="product.html"><img src="{% static 'images/product-1.png' %}" alt="" /></a>
                                     </div>
                                     <div class="title">
                                         <div><a href="product.html">Green corner</a></div>
@@ -639,7 +553,7 @@
 
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
-                                        <a href="product.html"><img src="assets/images/product-2.png" alt="" /></a>
+                                        <a href="product.html"><img src="{% static 'images/product-2.png' %}" alt="" /></a>
                                     </div>
                                     <div class="title">
                                         <div><a href="product.html">Green corner</a></div>
@@ -660,7 +574,7 @@
 
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
-                                        <a href="product.html"><img src="assets/images/product-3.png" alt="" /></a>
+                                        <a href="product.html"><img src="{% static 'images/product-3.png' %}" alt="" /></a>
                                     </div>
                                     <div class="title">
                                         <div><a href="product.html">Green corner</a></div>
@@ -681,7 +595,7 @@
 
                                 <div class="cart-block cart-block-item clearfix">
                                     <div class="image">
-                                        <a href="product.html"><img src="assets/images/product-4.png" alt="" /></a>
+                                        <a href="product.html"><img src="{% static 'images/product-4.png' %}" alt="" /></a>
                                     </div>
                                     <div class="title">
                                         <div><a href="product.html">Green corner</a></div>
@@ -769,12 +683,12 @@
 
         <!-- ========================  Main header ======================== -->
 
-        <section class="main-header" style="background-image:url(assets/images/gallery-4.jpg)">
+        <section class="main-header" style="background-image:url({% static 'images/gallery-4.jpg' %})">
             <header>
                 <div class="container">
                     <h1 class="h2 title">Blog</h1>
                     <ol class="breadcrumb breadcrumb-inverted">
-                        <li><a href="index.html"><span class="icon icon-home"></span></a></li>
+                        <li><a href="../mebel/index.html"><span class="icon icon-home"></span></a></li>
                         <li><a href="ideas.html">Blog</a></li>
                         <li><a class="active" href="blog-1.html">Interior ideas</a></li>
                     </ol>
@@ -803,9 +717,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="../mebel/article.html">
                                 <div class="image">
-                                    <img src="assets/images/project-1.jpg" alt="" />
+                                    <img src="{% static 'images/project-1.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">28 Mart 2017</div>
@@ -828,9 +742,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="../mebel/article.html">
                                 <div class="image">
-                                    <img src="assets/images/project-2.jpg" alt="" />
+                                    <img src="{% static 'images/project-2.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">25 Mart 2017</div>
@@ -853,9 +767,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="../mebel/article.html">
                                 <div class="image">
-                                    <img src="assets/images/project-3.jpg" alt="" />
+                                    <img src="{% static 'images/project-3.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">22 Mart 2017</div>
@@ -877,9 +791,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="../mebel/article.html">
                                 <div class="image">
-                                    <img src="assets/images/project-4.jpg" alt="" />
+                                    <img src="{% static 'images/project-4.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">18 Mart 2017</div>
@@ -902,9 +816,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="../mebel/article.html">
                                 <div class="image">
-                                    <img src="assets/images/project-5.jpg" alt="" />
+                                    <img src="{% static 'images/project-5.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">12 Mart 2017</div>
@@ -927,9 +841,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
+                            <a href="../mebel/article.html">
                                 <div class="image">
-                                    <img src="assets/images/project-6.jpg" alt="" />
+                                    <img src="{% static 'images/project-6.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">10 Mart 2017</div>
@@ -954,7 +868,7 @@
 
         <!-- ========================  Banner ======================== -->
 
-        <section class="banner" style="background-image:url(assets/images/gallery-4.jpg)">
+        <section class="banner" style="background-image:url({% static 'images/gallery-4.jpg' %})">
             <div class="container">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-8 text-center">
@@ -992,9 +906,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url(assets/images/blog-3.jpg)">
-                                    <img src="assets/images/blog-3.jpg" alt="" />
+                            <a href="../mebel/article.html">
+                                <div class="image" style="background-image:url({% static 'images/blog-3.jpg' %})">
+                                    <img src="{% static 'images/blog-3.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">08 Mart 2017</div>
@@ -1016,9 +930,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url(assets/images/blog-4.jpg)">
-                                    <img src="assets/images/blog-4.jpg" alt="" />
+                            <a href="../mebel/article.html">
+                                <div class="image" style="background-image:url({% static 'images/blog-4.jpg' %})">
+                                    <img src="{% static 'images/blog-4.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">03 Mart 2017</div>
@@ -1040,9 +954,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url(assets/images/blog-5.jpg)">
-                                    <img src="assets/images/blog-5.jpg" alt="" />
+                            <a href="../mebel/article.html">
+                                <div class="image" style="background-image:url({% static 'images/blog-5.jpg' %})">
+                                    <img src="{% static 'images/blog-5.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">01 Mart 2017</div>
@@ -1064,9 +978,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url(assets/images/blog-6.jpg)">
-                                    <img src="assets/images/blog-6.jpg" alt="" />
+                            <a href="../mebel/article.html">
+                                <div class="image" style="background-image:url({% static 'images/blog-6.jpg' %})">
+                                    <img src="{% static 'images/blog-6.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">08 Mart 2017</div>
@@ -1088,9 +1002,8 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url(assets/images/blog-7.jpg)">
-                                    <img src="assets/images/blog-7.jpg" alt="" />
+                            <a href="../mebel/article.html">
+                                <div class="image" style="background-image:url({% static 'images/blog-7.jpg' %})">
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">03 Mart 2017</div>
@@ -1112,9 +1025,9 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url(assets/images/blog-8.jpg)">
-                                    <img src="assets/images/blog-8.jpg" alt="" />
+                            <a href="../mebel/article.html">
+                                <div class="image" style="background-image:url({% static 'images/blog-8.jpg' %})">
+                                    <img src="{% static 'images/blog-8.jpg' %}" alt="" />
                                 </div>
                                 <div class="entry entry-block">
                                     <div class="date">01 Mart 2017</div>
@@ -1219,13 +1132,6 @@
     </div> <!--/wrapper-->
 
 
-    <!--JS files-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.bootstrap.js"></script>
-    <script src="js/jquery.magnific-popup.js"></script>
-    <script src="js/jquery.owl.carousel.js"></script>
-    <script src="js/jquery.ion.rangeSlider.js"></script>
-    <script src="js/jquery.isotope.pkgd.js"></script>
-    <script src="js/main.js"></script>
+
 </body>
 </html>

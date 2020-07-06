@@ -551,19 +551,18 @@
             });
 
         });
-
+        let price_from = $('#price_from').text(), price_to = $('#price_to').text();
         // Range slider
         // --------------------------------------
-
         $("#range-price-slider").ionRangeSlider({
             type: "double",
             min: 0,
-            max: 4000,
-            from: 150,
-            to: 3800,
+            max: 500000,
+            from: price_from,
+            to: price_to,
             prefix: "$",
             onChange: function (data) {
-
+                window.location.replace('/shop/?min=' + data.from + '&max=' + data.to);
                 $(".item").each(function () {
 
                     price = parseInt($(this).find(".price").text(), 10);
