@@ -562,7 +562,7 @@
             to: price_to,
             prefix: "$",
             onChange: function (data) {
-                window.location.replace('/shop/?min=' + data.from + '&max=' + data.to);
+                window.location.replace('?min=' + data.from + '&max=' + data.to);
                 $(".item").each(function () {
 
                     price = parseInt($(this).find(".price").text(), 10);

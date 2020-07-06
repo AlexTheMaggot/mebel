@@ -24,6 +24,15 @@ def shop(request, slug_category=None):
         selected_category = get_object_or_404(Categories, slug_category=slug_category)
         product = Products.objects.filter(category=selected_category)
 
+        price_from = request.GET.get("min", "")
+        price_to = request.GET.get("max", "")
+
+        if price_from == '':
+            price_from = '0'
+            price_to = '500000'
+        else:
+            product = Products.objects.filter(category=selected_category, price__gte=int(price_from), price__lte=int(price_to))
+
     context = {
         'price_from': price_from,
         'price_to': price_to,
