@@ -100,7 +100,7 @@
 
                     <!-- Setup your logo here-->
 
-                    <a href="index.html" class="logo"><img src="{% static 'images/logo.png' %}" alt="" /></a>
+                    <a href="/" class="logo"><img src="{% static 'images/logo.png' %}" alt="" /></a>
 
                     <!-- Mobile toggle menu -->
 
@@ -679,9 +679,11 @@
             <div class="container">
                 <h1 class="h2 title">Shop</h1>
                 <ol class="breadcrumb breadcrumb-inverted">
-                    <li><a href="index.html"><span class="icon icon-home"></span></a></li>
-                    <li><a href="category.html">Product Category</a></li>
-                    <li><a class="active" href="products-grid.html">Product Sub-category</a></li>
+                    <li><a href="/"><span class="icon icon-home"></span></a></li>
+                    <li><a href="/shop">Магазин</a></li>
+                    {% if selected_category %}
+                    <li><a class="active" href="/shop/{{ selected_category.slug_category }}">{{ selected_category }}</a></li>
+                    {% endif %}
                 </ol>
             </div>
         </header>
@@ -733,7 +735,7 @@
                     <div class="filters">
                         <!--Price-->
                         <div class="filter-box active">
-                            <div class="title">Price</div>
+                            <div class="title">Цена</div>
                             <div class="filter-content">
                                 <div class="price-filter">
                                     <input type="text" id="range-price-slider" value="" name="range"/>
@@ -941,7 +943,7 @@
 
                         <!-- === product-item === -->
 
-                        {% for p in product %}
+                        {% for p in page_obj %}
                         <div class="col-md-6 col-xs-6">
 
                             <article>
@@ -994,21 +996,40 @@
                     <!--Pagination-->
                     <div class="pagination-wrapper">
                         <ul class="pagination">
+                            {% if page_obj.has_previous %}
                             <li>
+                                <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="active">
                                 <a href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
+                            {% endif %}
+                            {% for i in page_obj.paginator.page_range %}
+                                {% if page_obj.number == i %}
+                                <li class="active"><a href="#">{{ i }}</a></li>
+                                {% else %}
+                                <li><a href="{{ request.path }}?page={{ i }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
                             <li>
+                                <a href="{{ request.path }}?page={{ page_obj.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" aria-label="Previous">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="active">
                                 <a href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
+                            {% endif %}
+
                         </ul>
                     </div>
 
@@ -1018,7 +1039,7 @@
             <!-- ========================  Product info popup - quick view ======================== -->
 
 
-            {% for p in product %}
+            {% for p in page_obj %}
             <div class="popup-main mfp-hide" id="productid{{p.pk}}">
 
                 <!-- === product popup === -->
