@@ -2857,15 +2857,35 @@ nav .cart-wrapper.open {
     height: 25px;
     background-color: #f8f8f8;
     border: 2px solid transparent;
-    margin-right: 10px;
+    margin-right: 10px !important;
     text-align: center;
     font-size: 10px;
     line-height: 21px;
     color: black;
 }
 
+label {
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.product-colors input:checked + label {
+    border-color: #ffbb00;
+}
+
+.product-colors input:checked {
+    border-color: #ffbb00;
+}
+
+
 .color-btn:hover {
     cursor: pointer;
+}
+
+.color-btn:focus {
+    outline: none;
 }
 
 .color-btn.checked {
@@ -4321,18 +4341,24 @@ nav .cart-wrapper.open {
     padding: 15px;
 }
 
-.popup-main .popup-buttons a {
+.popup-main .popup-buttons a, input {
+    background: transparent;
+    border: none;
     border-left: 1px solid #fff;
     padding: 32px 30px;
     display: inline-block;
     margin-left: -3px;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
-.popup-main .popup-buttons a:hover {
-    background-color: black;
-    border-color: black;
-    color: white;
-}
+/*.popup-main .popup-buttons a:hover, input:hover {*/
+/*    background-color: black;*/
+/*    border-color: black;*/
+/*    color: white;*/
+/*}*/
 
 .popup-main .mfp-close {
     height: 72px;

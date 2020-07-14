@@ -41,12 +41,12 @@
 
     // Open/close cart
 
-    $cart.on('click', function () {
-        toggleOpen($(this));
-        objCart.toggleClass('open');
-        closeLogin();
-        closeSearch();
-    });
+    // $cart.on('click', function () {
+    //     toggleOpen($(this));
+    //     objCart.toggleClass('open');
+    //     closeLogin();
+    //     closeSearch();
+    // });
 
     // Mobile menu open/close
 
@@ -326,13 +326,13 @@
     // Product color var
     // ----------------------------------------------------------------
 
-    $.each($('.product-colors'), function (i, n) {
-        var $btn = $('.color-btn');
-        $btn.on('click', function () {
-            $(this).parent().find($btn).removeClass('checked');
-            $(this).addClass('checked');
-        });
-    });
+    // $.each($('.product-colors'), function (i, n) {
+    //     var $btn = $('.color-btn');
+    //     $btn.on('click', function () {
+    //         $(this).parent().find($btn).removeClass('checked');
+    //         $(this).addClass('checked');
+    //     });
+    // });
 
     // Tabsy images
     // ----------------------------------------------------------------
