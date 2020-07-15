@@ -35,8 +35,8 @@ def shop(request, slug_category=None):
             price_from = '0'
             price_to = '500000'
         else:
-            product = Products.objects.filter(category=selected_category, price__gte=int(price_from), price__lte=int(price_to)).order_by('-id')
-
+            product = Products.objects.filter(category=selected_category, price__gte=int(price_from),
+                                              price__lte=int(price_to)).order_by('-id')
 
     paginator = Paginator(product, 10)
 

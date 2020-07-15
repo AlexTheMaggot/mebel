@@ -1,8 +1,12 @@
+import telebot
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views import View
 from django.views.decorators.http import require_POST
 from mebel.models import Products
 from .cart import Cart
-from .forms import CartAddProductForm
+from .forms import CartAddProductForm, OrderSendForm
+
+bot = telebot.TeleBot("1051471905:AAEf8-enWvdUxNtCAHuUcb0QmNBaWa0am98")
 
 
 @require_POST
@@ -33,4 +37,34 @@ def cart_detail(request):
     context = {
         'cart': cart
     }
-    return render(request, 'cart/detail.html', context)
+    return render(request, 'cart/cart.html', context)
+
+
+def order(request):
+    return render(request, 'cart/order.html')
+
+
+class OrderSendView(View):
+    def post(self, request):
+        if request.method == 'POST':
+            form = OrderSendForm(request.POST)
+            if form.is_valid():
+                name = form.cleaned_data['name']
+                phone = form.cleaned_data['phone']
+                cart = Cart(request)
+                message = 'Поступил новый заказ!\r\n\r\nИмя: ' + name + '\r\nТелефон: ' + phone \
+                          + '\r\n\r\nПродукты\r\n\r\n'
+
+                for c in cart:
+                    message += 'Название: ' + str(c['product']) + '\r\n'
+                    message += 'Цвет: ' + c['colors'] + '\r\n'
+                    message += 'Размер: ' + c['sizes'] + '\r\n'
+                    message += 'Цена: ' + str(c['price']) + '\r\n\r\n'
+
+                message += 'Общая стоимость: ' + str(cart.get_total_price())
+
+                bot.send_message(104566710, message)
+                Cart.clear(cart)
+
+                return redirect('/thank-you')
+        return redirect('/wrong')

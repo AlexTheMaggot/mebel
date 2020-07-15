@@ -1,0 +1,11 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %}Оформление заказа{% endblock %}
+{% block content %}
+<form action="{% url 'cart:ordersend' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" placeholder="Имя" name="name">
+    <input type="text" placeholder="Телефон" name="phone">
+    <input type="submit">
+</form>
+{% endblock %}
