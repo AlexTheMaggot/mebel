@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Categories, Materials, Colors, Sizes, Products
+from .models import Categories, Materials, Colors, Sizes, Products, Portfolio, Subscribe
 
 
 class CategoriesConfig(admin.ModelAdmin):
@@ -56,3 +56,19 @@ class ProductsConfig(admin.ModelAdmin):
 
 
 admin.site.register(Products, ProductsConfig)
+
+
+class PortfolioConfig(admin.ModelAdmin):
+    fields = ('name', 'slug', 'img')
+    list_display = ('name', 'slug')
+
+
+admin.site.register(Portfolio, PortfolioConfig)
+
+
+class SubscribeConfig(admin.ModelAdmin):
+    fields = ('mail',)
+    list_display = ('mail', 'date')
+
+
+admin.site.register(Subscribe, SubscribeConfig)

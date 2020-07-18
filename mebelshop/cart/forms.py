@@ -14,3 +14,4 @@ class CartAddProductForm(forms.Form):
 class OrderSendForm(forms.Form):
     name = forms.CharField()
     phone = forms.CharField()
+    mail = forms.CharField(required=False)

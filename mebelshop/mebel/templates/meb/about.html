@@ -73,33 +73,33 @@
                         <!--add active class for current page-->
 
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
 
                         <!--Currency selector-->
 
-                        <li class="nav-settings">
-                            <a href="javascript:void(0);" class="nav-settings-value"> USD $</a>
-                            <ul class="nav-settings-list">
-                                <li>USD $</li>
-                                <li>EUR €</li>
-                                <li>CHF Fr.</li>
-                                <li>GBP £</li>
-                            </ul>
-                        </li>
+<!--                        <li class="nav-settings">-->
+<!--                            <a href="javascript:void(0);" class="nav-settings-value"> USD $</a>-->
+<!--                            <ul class="nav-settings-list">-->
+<!--                                <li>USD $</li>-->
+<!--                                <li>EUR €</li>-->
+<!--                                <li>CHF Fr.</li>-->
+<!--                                <li>GBP £</li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
 
                         <!--Language selector-->
 
-                        <li class="nav-settings">
-                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>
-                            <ul class="nav-settings-list">
-                                <li>ENG</li>
-                                <li>GER</li>
-                            </ul>
-                        </li>
-                        <li><a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a></li>
-                        <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li>
-                        <li><a href="javascript:void(0);" class="open-cart"><i class="icon icon-cart"></i> <span>3</span></a></li>
+<!--                        <li class="nav-settings">-->
+<!--                            <a href="javascript:void(0);" class="nav-settings-value"> ENG</a>-->
+<!--                            <ul class="nav-settings-list">-->
+<!--                                <li>ENG</li>-->
+<!--                                <li>GER</li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+<!--                        <li><a href="javascript:void(0);" class="open-login"><i class="icon icon-user"></i></a></li>-->
+<!--                        <li><a href="javascript:void(0);" class="open-search"><i class="icon icon-magnifier"></i></a></li>-->
+<!--                        <li><a href="javascript:void(0);" class="open-cart"><i class="icon icon-cart"></i> <span>3</span></a></li>-->
                     </ul>
                 </div> <!--/navigation-top-->
 
@@ -133,7 +133,7 @@
                             <li><a href="{% url 'shop' %}">Товары</a></li>
 
                             <!-- Single dropdown-->
-                            <li><a href="{% url 'shop' %}">Портфолио</a></li>
+                            <li><a href="{% url 'portfolio' %}">Портфолио</a></li>
                             <li><a href="{% url 'design' %}">Дизайнер интерьера</a></li>
                             <li><a href="{% url 'about' %}">О нас</a></li>
                             <li><a href="{% url 'contact' %}">Контакты</a></li>
@@ -688,6 +688,10 @@
                 <div class="container text-center">
                     <h2 class="h2 title">Our story</h2>
                     <p class="subtitle">A bit of history</p>
+                    <ol class="breadcrumb breadcrumb-inverted">
+                        <li><a href="{% url 'home' %}"><span class="icon icon-home"></span></a></li>
+                        <li><a class="active" href="{% url 'about' %}">About</a></li>
+                    </ol>
                 </div>
             </header>
         </section>
@@ -940,7 +944,7 @@
                 <!-- === row item === -->
 
                 <div class="row row-block">
-                    <div class="col-md-5 history-image" style="background-image:url({% static 'images/blog-3.' %}')">
+                    <div class="col-md-5 history-image" style="background-image:url({% static 'images/blog-3.jpg' %})">
                         <div class="history-title">
                             <h2 class="title">1930</h2>
                             <p>The begining</p>

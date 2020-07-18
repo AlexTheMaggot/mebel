@@ -6,7 +6,7 @@ from mebel.models import Products
 from .cart import Cart
 from .forms import CartAddProductForm, OrderSendForm
 
-bot = telebot.TeleBot("1051471905:AAEf8-enWvdUxNtCAHuUcb0QmNBaWa0am98")
+bot = telebot.TeleBot("1355993371:AAGdwvhPEIIzb2vFV8Rtw4d5v-0SneeZBs4")
 
 
 @require_POST
@@ -51,9 +51,13 @@ class OrderSendView(View):
             if form.is_valid():
                 name = form.cleaned_data['name']
                 phone = form.cleaned_data['phone']
+                if form.cleaned_data['mail'] == '':
+                    mail = 'Не указана'
+                else:
+                    mail = form.cleaned_data['mail']
                 cart = Cart(request)
-                message = 'Поступил новый заказ!\r\n\r\nИмя: ' + name + '\r\nТелефон: ' + phone \
-                          + '\r\n\r\nПродукты\r\n\r\n'
+                message = 'Поступил новый заказ!\r\n\r\nИмя: ' + name + '\r\nТелефон: ' + phone + '\r\nПочта: ' \
+                          + mail + '\r\n\r\nПродукты\r\n\r\n'
 
                 for c in cart:
                     message += 'Название: ' + str(c['product']) + '\r\n'
@@ -63,8 +67,7 @@ class OrderSendView(View):
 
                 message += 'Общая стоимость: ' + str(cart.get_total_price())
 
-                bot.send_message(104566710, message)
+                bot.send_message(-1001450383553, message)
                 Cart.clear(cart)
-
-                return redirect('/thank-you')
-        return redirect('/wrong')
+                return redirect('thank-you')
+            return redirect('wrong')

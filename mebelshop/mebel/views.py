@@ -1,11 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from cart.forms import CartAddProductForm
-from .models import Categories, Products
+from .models import Categories, Products, Portfolio
+from django.core.mail import send_mail
+import telebot
+from .forms import SubscribeForm
+from django.views import View
+
+bot = telebot.TeleBot("1355993371:AAGdwvhPEIIzb2vFV8Rtw4d5v-0SneeZBs4")
 
 
 def index(request):
-    return render(request, 'meb/index.html')
+    form = SubscribeForm()
+    return render(request, 'meb/index.html', {'form': form})
 
 
 def shop(request, slug_category=None):
@@ -68,3 +75,37 @@ def about(request):
 
 def contact(request):
     return render(request, 'meb/contact.html')
+
+
+def portfolio(request):
+    portfolio = Portfolio.objects.all()
+    context = {
+        'portfolio': portfolio,
+    }
+    return render(request, 'meb/portfolio.html', context)
+
+
+class SubscribeView(View):
+    def post(self, request):
+        # if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            form.save()
+            mail = form.cleaned_data['mail']
+            subject = 'Новая заявка на подписку!'
+            from_email = 'no-reply@bindoors.ru'
+            to_email = ['aitofullstackdev@gmail.com', 'aitolivelive@gmail.com']
+            message = 'Новая заявка на подписку!' + '\r\n' + '\r\n' + 'Почта: ' + mail
+
+            send_mail(subject, message, from_email, to_email, fail_silently=False)
+            bot.send_message(-1001450383553, message)
+        return redirect('home')
+
+
+def thank_you(request):
+    return render(request, 'meb/thank-you.html')
+
+
+def wrong(request):
+    return render(request, 'meb/wrong.html')

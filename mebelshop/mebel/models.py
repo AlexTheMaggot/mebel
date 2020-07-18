@@ -81,3 +81,29 @@ class Products(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+
+
+class Portfolio(models.Model):
+    name = models.CharField(verbose_name='Название', max_length=200)
+    slug = models.CharField(verbose_name='Ссылка', max_length=200)
+    img = models.ImageField(verbose_name='Изображение для портфолио', upload_to='static/images/portfolio/', null=True,
+                             blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Портфолио'
+        verbose_name_plural = 'Портфолио'
+
+
+class Subscribe(models.Model):
+    mail = models.CharField(verbose_name='Почта', max_length=200)
+    date = models.DateTimeField(verbose_name='Дата', auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.mail
+
+    class Meta:
+        verbose_name = 'Заявка на подписку'
+        verbose_name_plural = 'Заявки на подписку'
