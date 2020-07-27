@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mebel.apps.MebelConfig',
     'cart.apps.CartConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [

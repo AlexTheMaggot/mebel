@@ -85,7 +85,7 @@ class Products(models.Model):
 
 class Portfolio(models.Model):
     name = models.CharField(verbose_name='Название', max_length=200)
-    slug = models.CharField(verbose_name='Ссылка', max_length=200)
+    url = models.CharField(verbose_name='Ссылка', max_length=200)
     img = models.ImageField(verbose_name='Изображение для портфолио', upload_to='static/images/portfolio/', null=True,
                              blank=True)
 
@@ -107,3 +107,32 @@ class Subscribe(models.Model):
     class Meta:
         verbose_name = 'Заявка на подписку'
         verbose_name_plural = 'Заявки на подписку'
+
+
+class Team(models.Model):
+    name = models.CharField(verbose_name='Название', max_length=200)
+    img = models.ImageField(verbose_name='Фото участника команды', upload_to='static/images/team/', null=True,)
+    status = models.CharField(verbose_name='Статус', max_length=200)
+    phone = models.CharField(verbose_name='Номер телефона', max_length=200, blank=True)
+    instagram = models.CharField(verbose_name='Ссылки на instagram', max_length=200, blank=True)
+    mail = models.CharField(verbose_name='Почта участника', max_length=200, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Команда'
+        verbose_name_plural = 'Команда'
+
+
+class Review(models.Model):
+    name = models.CharField(verbose_name='Имя', max_length=200)
+    img = models.ImageField(verbose_name='Фото человека с отзыва', upload_to='static/images/team/')
+    description = models.TextField(verbose_name='Отзыв', max_length=200)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'

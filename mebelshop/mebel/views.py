@@ -1,18 +1,21 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from cart.forms import CartAddProductForm
-from .models import Categories, Products, Portfolio
+from .models import Categories, Products, Portfolio, Team, Review
 from django.core.mail import send_mail
 import telebot
 from .forms import SubscribeForm
 from django.views import View
+from blog.models import Post
+from django.views.generic import DetailView
 
 bot = telebot.TeleBot("1355993371:AAGdwvhPEIIzb2vFV8Rtw4d5v-0SneeZBs4")
 
 
 def index(request):
     form = SubscribeForm()
-    return render(request, 'meb/index.html', {'form': form})
+    posts = Post.objects.all().order_by('-date')[:3]
+    return render(request, 'meb/index.html',    {'form': form, 'posts': posts})
 
 
 def shop(request, slug_category=None):
@@ -69,12 +72,14 @@ def shop(request, slug_category=None):
     return render(request, 'meb/shop.html', context)
 
 
-def design(request):
-    return render(request, 'meb/ideas.html')
-
-
 def about(request):
-    return render(request, 'meb/about.html')
+    teams = Team.objects.all()
+    reviews = Review.objects.all()
+    context = {
+        'teams': teams,
+        'reviews': reviews,
+    }
+    return render(request, 'meb/about.html', context)
 
 
 def contact(request):
@@ -82,9 +87,9 @@ def contact(request):
 
 
 def portfolio(request):
-    portfolio = Portfolio.objects.all()
+    portfolios = Portfolio.objects.all()
     context = {
-        'portfolio': portfolio,
+        'portfolios': portfolios,
     }
     return render(request, 'meb/portfolio.html', context)
 
@@ -113,3 +118,16 @@ def thank_you(request):
 
 def wrong(request):
     return render(request, 'meb/wrong.html')
+
+
+def design(request):
+    posts = Post.objects.all()
+    context = {
+        'posts': posts,
+    }
+    return render(request, 'blog/ideas.html', context)
+
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'blog/article.html'

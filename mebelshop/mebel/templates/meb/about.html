@@ -720,99 +720,28 @@
 
                         <!-- === team member === -->
 
+                        {% for t in teams %}
                         <div class="col-sm-3">
                             <article>
                                 <div class="details details-text">
                                     <div class="inner">
-                                        <h3 class="title">Lea Nils</h3>
-                                        <h6 class="title">Director</h6>
+                                        <h3 class="title">{{ t.name }}</h3>
+                                        <h6 class="title">{{ t.status }}</h6>
                                     </div>
                                 </div>
                                 <div class="image">
-                                    <img src="{% static 'images/user-5.jpg' %}" alt="" />
+                                    <img src="{{ t.img.url }}" alt="" />
                                 </div>
                                 <div class="details details-social">
                                     <div class="inner">
-                                        <a href="#"><i class="fa fa-phone"></i></a>
-                                        <a href="#"><i class="fa fa-envelope"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                                        <a href="{{ t.phone }}"><i class="fa fa-phone"></i></a>
+                                        <a href="{{ t.mail }}"><i class="fa fa-envelope"></i></a>
+                                        <a href="{{ t.instagram }}"><i class="fa fa-instagram"></i></a>
                                     </div>
-                                </div>
                             </article>
                         </div>
+                        {% endfor %}
 
-                        <!-- === team member === -->
-
-                        <div class="col-sm-3">
-                            <article>
-                                <div class="details details-text">
-                                    <div class="inner">
-                                        <h3 class="title">Nora Star</h3>
-                                        <h6 class="title">Architect</h6>
-                                    </div>
-                                </div>
-                                <div class="image">
-                                    <img src="{% static 'images/user-4.jpg' %}" alt="" />
-                                </div>
-                                <div class="details details-social">
-                                    <div class="inner">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-
-                        <!-- === team member === -->
-
-                        <div class="col-sm-3">
-                            <article>
-                                <div class="details details-text">
-                                    <div class="inner">
-                                        <h3 class="title">Jenna Hale</h3>
-                                        <h6 class="title">Quality director</h6>
-                                    </div>
-                                </div>
-                                <div class="image">
-                                    <img src="{% static 'images/user-3.jpg' %}" alt="" />
-                                </div>
-                                <div class="details details-social">
-                                    <div class="inner">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-
-                        <!-- === team member === -->
-
-                        <div class="col-sm-3">
-                            <article>
-                                <div class="details details-text">
-                                    <div class="inner">
-                                        <h3 class="title">Glen Jordan</h3>
-                                        <h6 class="title">Supervisor</h6>
-                                    </div>
-                                </div>
-                                <div class="image">
-                                    <img src="{% static 'images/user-4.jpg' %}" alt="" />
-                                </div>
-                                <div class="details details-social">
-                                    <div class="inner">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
 
                     </div> <!--/row-->
                     <!-- === button more === -->
@@ -1082,7 +1011,7 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="../mebel/article.html">
+                            <a href="../../../blog/templates/blog/article.html">
                                 <div class="image">
                                     <img src="{% static 'images/project-1.jpg' %}" alt="" />
                                 </div>
@@ -1106,7 +1035,7 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="../mebel/article.html">
+                            <a href="../../../blog/templates/blog/article.html">
                                 <div class="image">
                                     <img src="{% static 'images/project-2.jpg' %}" alt="" />
                                 </div>
@@ -1130,7 +1059,7 @@
 
                     <div class="col-sm-4">
                         <article>
-                            <a href="../mebel/article.html">
+                            <a href="../../../blog/templates/blog/article.html">
                                 <div class="image">
                                     <img src="{% static 'images/project-3.jpg' %}" alt="" />
                                 </div>
@@ -1154,7 +1083,7 @@
                 <!--/row-->
                 <!--button more-->
                 <div class="wrapper-more">
-                    <a href="ideas.html" class="btn btn-main">View all posts</a>
+                    <a href="../../../blog/templates/blog/ideas.html" class="btn btn-main">View all posts</a>
                 </div>
 
             </div>
@@ -1171,88 +1100,19 @@
                     <div class="quote-carousel">
 
                         <!-- === quoute item === -->
-
+                        {% for r in reviews %}
                         <div class="quote">
                             <div class="image">
-                                <img src="{% static 'images/user-3.jpg' %}" alt="" />
+                                <img src="{{ r.img.url }}" alt="" />
                             </div>
                             <div class="text">
-                                <h4>Jenna Hale</h4>
-                                <p>Ipsum dolore eros dolore <br />dolor dolores sit iriure</p>
-                            </div>
-                            <div class="more">
-                                <div class="rating">
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                </div>
+                                <h4>{{ r.name }}</h4>
+                                <p>{{ r.description}}</p>
                             </div>
                         </div>
+                        {% endfor %}
 
-                        <!-- === quoute item === -->
 
-                        <div class="quote">
-                            <div class="image">
-                                <img src="{% static 'images/user-1.jpg' %}" alt="" />
-                            </div>
-                            <div class="text">
-                                <h4>Glen Jordan</h4>
-                                <p>Ipsum dolore eros dolore <br />dolor dolores sit iriure</p>
-                            </div>
-                            <div class="more">
-                                <div class="rating">
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- === quoute item === -->
-
-                        <div class="quote">
-                            <div class="image">
-                                <img src="{% static 'images/user-4.jpg' %}" alt="" />
-                            </div>
-                            <div class="text">
-                                <h4>Lea Nils</h4>
-                                <p>Ipsum dolore eros dolore <br />dolor dolores sit iriure</p>
-                            </div>
-                            <div class="more">
-                                <div class="rating">
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- === quoute item === -->
-
-                        <div class="quote">
-                            <div class="image">
-                                <img src="{% static 'images/user-5.jpg' %}" alt="" />
-                            </div>
-                            <div class="text">
-                                <h4>Nora Star</h4>
-                                <p>Ipsum dolore eros dolore <br />dolor dolores sit iriure</p>
-                            </div>
-                            <div class="more">
-                                <div class="rating">
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                    <span class="icon icon-star"></span>
-                                </div>
-                            </div>
-                        </div>
                     </div> <!--/quote-carousel-->
                 </div> <!--/row-->
             </div> <!--/container-->
