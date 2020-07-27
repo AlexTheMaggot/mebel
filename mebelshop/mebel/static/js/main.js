@@ -29,6 +29,23 @@
         closeCart();
     });
 
+    // Changing sorting select
+
+    let sorting_param = window
+        .location
+        .search
+        .replace('?', '')
+        .split('&')
+        .reduce(
+            function (p, e) {
+                let a = e.split('=');
+                p[decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+                return p;
+            },
+            {}
+        );
+    $("#sorting").val(sorting_param['sort']).attr('selected', 'selected');
+
     // Open/close search bar
 
     $search.on('click', function () {
@@ -84,8 +101,7 @@
 
         if (liParent.hasClass('expanded')) {
             liDropdown.slideDown();
-        }
-        else {
+        } else {
             liDropdown.slideUp();
         }
     });
@@ -107,10 +123,12 @@
         objSearch.removeClass('open');
         $search.removeClass('open');
     }
+
     function closeLogin() {
         objLogin.removeClass('open');
         $login.removeClass('open');
     }
+
     function closeCart() {
         objCart.removeClass('open');
         $cart.removeClass('open');
@@ -211,12 +229,12 @@
             stopOnHover: false
         });
 
-        animatetCaptions(); 
+        animatetCaptions();
 
         function animatetCaptions(event) {
             "use strict";
             var activeItem = $(n).find('.owl-item.active'),
-            timeDelay = 100;
+                timeDelay = 100;
             $.each(activeItem.find('.animated'), function (j, m) {
                 var item = $(m);
                 item.css('animation-delay', timeDelay + 'ms');
@@ -310,8 +328,7 @@
         }
         if (docScrollBottom) {
             $scrollbtn.addClass('active');
-        }
-        else {
+        } else {
             $scrollbtn.removeClass('active');
         }
     });
@@ -390,8 +407,7 @@
 
         if ($parent.hasClass('active')) {
             $parent.find('.filter-content').slideDown(300);
-        }
-        else {
+        } else {
             $parent.find('.filter-content').slideUp(200);
         }
     });
@@ -412,7 +428,7 @@
         if ($(this).is(':checked')) {
             var $labelText = $(this).parent().find('label').text(),
                 $title = $(this).closest('.filter-box').find('.title');
-            
+
             $title.find('span').text($labelText);
         }
     });
@@ -562,15 +578,30 @@
             to: price_to,
             prefix: "$",
             onChange: function (data) {
-                window.location.replace('?min=' + data.from + '&max=' + data.to);
+                if (window.location['href'].indexOf('sort=') !== -1) {
+                    window.location.replace('?sort=' + sorting_param['sort'] + '&min=' + data.from + '&max=' + data.to);
+                }
+                else {
+                    window.location.replace('?min=' + data.from + '&max=' + data.to);
+                }
+
+                /*if (window.location['href'].indexOf('?') === -1) {
+                    window.location.replace('?min=' + data.from + '&max=' + data.to);
+                } else {
+                    if (window.location['href'].indexOf('?min=') === -1) {
+                        window.location.replace('?sort=' + sorting_param['sort'] + '&min=' + data.from + '&max=' + data.to);
+                    } else {
+                        window.location.replace('?min=' + data.from + '&max=' + data.to);
+                    }
+                }*/
+
                 $(".item").each(function () {
 
                     price = parseInt($(this).find(".price").text(), 10);
 
                     if (data.from <= price && data.to >= price) {
                         $(this).addClass('show-me');
-                    }
-                    else {
+                    } else {
                         $(this).removeClass('show-me');
                     }
                 });
@@ -581,7 +612,16 @@
                 });
             }
         });
+        $('#sorting').on('change', function () {
+            let sort = $('#sorting > option:selected').val();
 
+            if (window.location['href'].indexOf('min=') !== -1) {
+                window.location.replace('?min=' + sorting_param['min'] + '&max=' + sorting_param['max'] + '&sort=' + sort);
+            }
+            else {
+                window.location.replace('?sort=' + sort);
+            }
+        });
     });
 
     // Single page - box filters
@@ -603,24 +643,21 @@
             if ($this.hasClass('active')) {
                 $this.removeClass('active');
 
-                $grid.isotope({ filter: "" });
-            }
-            else {
+                $grid.isotope({filter: ""});
+            } else {
                 $boxFilter.removeClass('active');
                 $this.addClass('active');
 
                 // Filter results
                 var filterValue = $this.attr('data-filter');
-                $grid.isotope({ filter: filterValue });
+                $grid.isotope({filter: filterValue});
             }
-
 
 
         });
 
 
     });
-
 
 
     // Team members hover effect
@@ -648,8 +685,7 @@
         if (parent.hasClass('active')) {
             $this.text($this.data('text-close'));
             $('.contact-form').slideDown();
-        }
-        else {
+        } else {
             $this.text($this.data('text-open'));
             $('.contact-form').slideUp();
         }

@@ -923,12 +923,11 @@
                         </div>
                         <!--Sort options-->
                         <div class="sort-options pull-right">
-                            <span class="hidden-xs">Sort by</span>
-                            <select>
-                                <option value="1">Name</option>
-                                <option value="2">Popular items</option>
-                                <option value="3">Price: lowest</option>
-                                <option value="4">Price: highest</option>
+                            <span class="hidden-xs">Сортировать по:</span>
+                            <select id="sorting">
+                                <option id="sorting__name" value="-name">Имя</option>
+                                <option id="sorting__price" value="price">Цена: дешевые</option>
+                                <option id="sorting__-price" value="-price">Цена: дорогие</option>
                             </select>
                             <!--Grid-list view-->
                             <span class="grid-list">

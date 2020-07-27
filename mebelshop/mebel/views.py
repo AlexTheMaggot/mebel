@@ -21,12 +21,16 @@ def shop(request, slug_category=None):
 
     price_from = request.GET.get("min", "")
     price_to = request.GET.get("max", "")
+    sorting = request.GET.get("sort", "")
+
+    if sorting == '':
+        sorting = '-name'
 
     if price_from == '':
         price_from = '0'
         price_to = '500000'
-    else:
-        product = Products.objects.filter(price__gte=int(price_from), price__lte=int(price_to)).order_by('-id')
+
+    product = Products.objects.filter(price__gte=int(price_from), price__lte=int(price_to)).order_by('-id').order_by(sorting)
 
     selected_category = ''
 
