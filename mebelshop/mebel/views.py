@@ -33,7 +33,7 @@ def shop(request, slug_category=None):
         price_from = '0'
         price_to = '500000'
 
-    product = Products.objects.filter(price__gte=int(price_from), price__lte=int(price_to)).order_by('-id').order_by(sorting)
+    product = Products.objects.order_by(sorting).filter(price__gte=int(price_from), price__lte=int(price_to))
 
     selected_category = ''
 

@@ -698,7 +698,7 @@
                                 layout. Google fonts integration
                             </div>
                             <div class="animated" data-animation="fadeInUp">
-                                <a href="https://themeforest.net/item/mobel-furniture-website-template/20382155" target="_blank" class="btn btn-main" ><i class="icon icon-cart"></i> Buy this template</a>
+                                <a href="{% url 'about' %}" target="_blank" class="btn btn-main" ></i> О нас</a>
                             </div>
                         </div>
                     </div>
@@ -713,7 +713,7 @@
                             <div class="animated" data-animation="fadeInUp">Unlimited Choices. Unbeatable Prices. Free Shipping.</div>
                             <div class="animated" data-animation="fadeInUp">Furniture category icon fonts!</div>
                             <div class="animated" data-animation="fadeInUp">
-                                <a href="category.html" class="btn btn-clean">Get insipred</a>
+                                <a href="{% url 'shop' %}" class="btn btn-clean">Товары</a>
                             </div>
                         </div>
                     </div>
@@ -734,7 +734,7 @@
                                 Bunch of typography effects.
                             </div>
                             <div class="animated" data-animation="fadeInUp">
-                                <a href="https://themeforest.net/item/mobel-furniture-website-template/20382155" target="_blank" class="btn btn-clean">Buy this template</a>
+                                <a href="{% url 'contact' %}" target="_blank" class="btn btn-clean">Контакты</a>
                             </div>
                         </div>
                     </div>
@@ -1415,7 +1415,16 @@
                 <!-- === blog header === -->
 
                 <header>
+                    <div class="row"><header>
                     <div class="row">
+                        <div class="col-md-offset-2 col-md-8 text-center">
+                            <h1 class="h2 title">Blog</h1>
+                            <div class="text">
+                                <p>Latest news from the blog</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
                     <!-- === blog-item === -->
                     {% for p in posts %}
                     <div class="col-sm-4">
@@ -1473,115 +1482,115 @@
 
         <!-- ========================  Blog ======================== -->
 
-        <section class="blog">
+<!--        <section class="blog">-->
 
-            <div class="container">
+<!--            <div class="container">-->
 
-                <!-- === blog header === -->
+<!--                &lt;!&ndash; === blog header === &ndash;&gt;-->
 
-                <header>
-                    <div class="row">
-                        <div class="col-md-offset-2 col-md-8 text-center">
-                            <h1 class="h2 title">Blog</h1>
-                            <div class="text">
-                                <p>Latest news from the blog</p>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+<!--                <header>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-md-offset-2 col-md-8 text-center">-->
+<!--                            <h1 class="h2 title">Blog</h1>-->
+<!--                            <div class="text">-->
+<!--                                <p>Latest news from the blog</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </header>-->
 
-                <div class="row">
+<!--                <div class="row">-->
 
-                    <!-- === blog item === -->
+<!--                    &lt;!&ndash; === blog item === &ndash;&gt;-->
 
-                    <div class="col-sm-4">
-                        <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url({% static 'images/design/project-1.jpg' %})">
-                                    <img src="{% static 'images/blog-1.jpg' %}" alt="" />
-                                </div>
-                                <div class="entry entry-table">
-                                    <div class="date-wrapper">
-                                        <div class="date">
-                                            <span>MAR</span>
-                                            <strong>08</strong>
-                                            <span>2017</span>
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        <h2 class="h5">The 3 Tricks that Quickly Became Rules</h2>
-                                    </div>
-                                </div>
-                                <div class="show-more">
-                                    <span class="btn btn-main btn-block">Read more</span>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
+<!--                    <div class="col-sm-4">-->
+<!--                        <article>-->
+<!--                            <a href="article.html">-->
+<!--                                <div class="image" style="background-image:url({% static 'images/design/project-1.jpg' %})">-->
+<!--                                    <img src="{% static 'images/blog-1.jpg' %}" alt="" />-->
+<!--                                </div>-->
+<!--                                <div class="entry entry-table">-->
+<!--                                    <div class="date-wrapper">-->
+<!--                                        <div class="date">-->
+<!--                                            <span>MAR</span>-->
+<!--                                            <strong>08</strong>-->
+<!--                                            <span>2017</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="title">-->
+<!--                                        <h2 class="h5">The 3 Tricks that Quickly Became Rules</h2>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="show-more">-->
+<!--                                    <span class="btn btn-main btn-block">Read more</span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </article>-->
+<!--                    </div>-->
 
-                    <!-- === blog item === -->
+<!--                    &lt;!&ndash; === blog item === &ndash;&gt;-->
 
-                    <div class="col-sm-4">
-                        <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url({% static 'images/design/project-2.jpg' %})">
-                                    <img src="{% static 'images/blog-1.jpg' %}" alt="" />
-                                </div>
-                                <div class="entry entry-table">
-                                    <div class="date-wrapper">
-                                        <div class="date">
-                                            <span>MAR</span>
-                                            <strong>03</strong>
-                                            <span>2017</span>
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        <h2 class="h5">Decorating When You're Starting Out or Starting Over</h2>
-                                    </div>
-                                </div>
-                                <div class="show-more">
-                                    <span class="btn btn-main btn-block">Read more</span>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
+<!--                    <div class="col-sm-4">-->
+<!--                        <article>-->
+<!--                            <a href="article.html">-->
+<!--                                <div class="image" style="background-image:url({% static 'images/design/project-2.jpg' %})">-->
+<!--                                    <img src="{% static 'images/blog-1.jpg' %}" alt="" />-->
+<!--                                </div>-->
+<!--                                <div class="entry entry-table">-->
+<!--                                    <div class="date-wrapper">-->
+<!--                                        <div class="date">-->
+<!--                                            <span>MAR</span>-->
+<!--                                            <strong>03</strong>-->
+<!--                                            <span>2017</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="title">-->
+<!--                                        <h2 class="h5">Decorating When You're Starting Out or Starting Over</h2>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="show-more">-->
+<!--                                    <span class="btn btn-main btn-block">Read more</span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </article>-->
+<!--                    </div>-->
 
-                    <!-- === blog item === -->
+<!--                    &lt;!&ndash; === blog item === &ndash;&gt;-->
 
-                    <div class="col-sm-4">
-                        <article>
-                            <a href="article.html">
-                                <div class="image" style="background-image:url({% static 'images/design/project-3.jpg' %})">
-                                    <img src="{% static 'images/blog-8.jpg' %}" alt="" />
-                                </div>
-                                <div class="entry entry-table">
-                                    <div class="date-wrapper">
-                                        <div class="date">
-                                            <span>MAR</span>
-                                            <strong>01</strong>
-                                            <span>2017</span>
-                                        </div>
-                                    </div>
-                                    <div class="title">
-                                        <h2 class="h5">What does your favorite dining chair say about you?</h2>
-                                    </div>
-                                </div>
-                                <div class="show-more">
-                                    <span class="btn btn-main btn-block">Read more</span>
-                                </div>
-                            </a>
-                        </article>
-                    </div>
+<!--                    <div class="col-sm-4">-->
+<!--                        <article>-->
+<!--                            <a href="article.html">-->
+<!--                                <div class="image" style="background-image:url({% static 'images/design/project-3.jpg' %})">-->
+<!--                                    <img src="{% static 'images/blog-8.jpg' %}" alt="" />-->
+<!--                                </div>-->
+<!--                                <div class="entry entry-table">-->
+<!--                                    <div class="date-wrapper">-->
+<!--                                        <div class="date">-->
+<!--                                            <span>MAR</span>-->
+<!--                                            <strong>01</strong>-->
+<!--                                            <span>2017</span>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="title">-->
+<!--                                        <h2 class="h5">What does your favorite dining chair say about you?</h2>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="show-more">-->
+<!--                                    <span class="btn btn-main btn-block">Read more</span>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </article>-->
+<!--                    </div>-->
 
-                </div> <!--/row-->
-                <!-- === button more === -->
+<!--                </div> &lt;!&ndash;/row&ndash;&gt;-->
+<!--                &lt;!&ndash; === button more === &ndash;&gt;-->
 
-                <div class="wrapper-more">
-                    <a href="blog-grid.html" class="btn btn-main">View all posts</a>
-                </div>
+<!--                <div class="wrapper-more">-->
+<!--                    <a href="blog-grid.html" class="btn btn-main">View all posts</a>-->
+<!--                </div>-->
 
-            </div> <!--/container-->
-        </section>
+<!--            </div> &lt;!&ndash;/container&ndash;&gt;-->
+<!--        </section>-->
 
         <!-- ========================  Instagram ======================== -->
 
@@ -1695,15 +1704,12 @@
                 <div class="footer-social">
                     <div class="row">
                         <div class="col-sm-6">
-                            <a href="https://themeforest.net/item/mobel-furniture-website-template/20382155" target="_blank"><i class="fa fa-download"></i> Download Mobel</a> &nbsp; | <a href="#">Sitemap</a> &nbsp; | &nbsp; <a href="#">Privacy policy</a>
                         </div>
                         <div class="col-sm-6 links">
                             <ul>
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                                 <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
                             </ul>
                         </div>
                     </div>
