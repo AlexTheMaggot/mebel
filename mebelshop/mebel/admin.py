@@ -40,7 +40,7 @@ class ProductsConfig(admin.ModelAdmin):
         'name',
         'slug_product',
         'brand',
-        ('category', 'availability', 'new'),
+        ('category', 'availability', 'new', 'popularity'),
         ('price', 'price_discount', 'discount'),
         'materials',
         'colors',

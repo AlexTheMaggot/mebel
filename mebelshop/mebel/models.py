@@ -67,13 +67,14 @@ class Products(models.Model):
                              blank=True)
     img5 = models.ImageField(verbose_name='Пятое изображение (640х480)', upload_to='static/images/products/', null=True,
                              blank=True)
-    brand = models.CharField(verbose_name='Бернд', max_length=200)
+    brand = models.CharField(verbose_name='Бренд', max_length=200)
     materials = models.ManyToManyField(Materials, verbose_name='Материалы', related_name='materials')
     colors = models.ManyToManyField(Colors, verbose_name='Цвета', related_name='colors')
     sizes = models.ManyToManyField(Sizes, verbose_name='Размеры', related_name='sizes')
     availability = models.BooleanField(verbose_name='Наличие')
     new = models.BooleanField(verbose_name='Новинка')
     date = models.DateTimeField(auto_now_add=True)
+    popularity = models.BooleanField(verbose_name='Популярный товар', default=False)
 
     def __str__(self):
         return self.name
