@@ -5,6 +5,7 @@ from .models import Categories, Products, Portfolio, Team, Review
 from django.core.mail import send_mail
 import telebot
 from .forms import SubscribeForm
+from .models import Products
 from django.views import View
 from blog.models import Post
 from django.views.generic import DetailView
@@ -15,7 +16,13 @@ bot = telebot.TeleBot("1355993371:AAGdwvhPEIIzb2vFV8Rtw4d5v-0SneeZBs4")
 def index(request):
     form = SubscribeForm()
     posts = Post.objects.all().order_by('-date')[:3]
-    return render(request, 'meb/index.html',    {'form': form, 'posts': posts})
+    products = Products.objects.filter(popularity__exact=True)
+    context = {
+        'form': form,
+        'posts': posts,
+        'products': products
+    }
+    return render(request, 'meb/index.html', context)
 
 
 def shop(request, slug_category=None):

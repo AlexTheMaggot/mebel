@@ -51,7 +51,7 @@ class ProductsConfig(admin.ModelAdmin):
         'img4',
         'img5'
     )
-    list_display = ('name', 'category', 'price')
+    list_display = ('name', 'category', 'price', 'popularity')
     prepopulated_fields = {'slug_product': ('name',)}
 
 
