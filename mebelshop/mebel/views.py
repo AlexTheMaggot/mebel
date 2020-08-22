@@ -16,7 +16,11 @@ bot = telebot.TeleBot("1355993371:AAGdwvhPEIIzb2vFV8Rtw4d5v-0SneeZBs4")
 def index(request):
     form = SubscribeForm()
     posts = Post.objects.all().order_by('-date')[:3]
-    products = Products.objects.filter(popularity__exact=True)
+    product = Products.objects.filter(popularity__exact=True)
+
+    paginator = Paginator(product, 6)
+    products = paginator.get_page(1)
+
     context = {
         'form': form,
         'posts': posts,
